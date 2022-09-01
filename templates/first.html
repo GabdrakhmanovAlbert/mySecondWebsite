@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>built-in "for" and "if"</title>
+    </head>
+    <body>
+        <h1>Здесь смотрим как с бд взаимодействовать и используем билт-ин for и if от джанги</h1>
+        <h2>{{ object_list }}</h2>
+
+        <div style="height: 100px;"></div>
+
+        <!-- Перебор внутри списка ордеров -->
+        {% for obj in object_list %}
+        <table border="1">
+            <tr>
+                <th> {{ obj.order_name }} </th>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>Phone number</td>
+                <td>Date of creation</td>
+            </tr>
+            <tr>
+                <td> {{ obj.id }} </td>
+                <td> {{ obj.order_phone }} </td>
+                <td> {{ obj.order_dt }} </td>
+            </tr>
+        </table>
+        <hr>
+        {% endfor %}
+
+        <div style="height: 100px;"></div>
+
+        {% if object_list%}
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date of Creation</th>
+                <th>Phone</th>
+            </tr>
+            {% for obj in object_list %}
+            <tr>
+                <td> {{ obj.id }} </td>
+                <td> {{ obj.order_name }} </td>
+                <td> {{ obj.order_dt }} </td>
+                <td> {{ obj.order_phone }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h2>Данных нет</h2>
+        {% endif %}
+    </body>
+</html>

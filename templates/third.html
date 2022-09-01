@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms like Class</title>
+    <link rel="stylesheet" href="{% static 'css/input.css' %}">
+</head>
+<body>
+    <div style="height: 100px;"></div>
+    <form action="{% url 'thanks_page' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+        <!--form.as_p - в тэг <p> -->
+        <!--form.as_ul -  in tag <li>-->
+    </form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Work with static files{% endblock %}
+{% block content %}
+<main>
+    <h1>Работа с картинками</h1>
+    <img src="{% static 'img/1.jpg' %}" height="200px">
+</main>
+{% endblock %}

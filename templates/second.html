@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>work with tag "form"</title>
+</head>
+<body>
+    <h1>Get-request</h1>
+    <form action="{% url 'thanks_page' %}" method="GET">
+        <label>Имя</label>
+        <input name="name">
+        <label>Телефон</label>
+        <input name="phone">
+        <button type="submit">Отправить</button>
+    </form>
+    <h1>Post-request</h1>
+    <form action="{% url 'thanks_page' %}" method="POST">
+        {% csrf_token %}
+        <label>Имя</label>
+        <input name="name">
+        <label>Телефон</label>
+        <input name="phone">
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

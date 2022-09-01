@@ -15,7 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from crm import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('first/', views.first_page),
+    path('', views.main_page),
+    path('second/', views.second_page),
+    path('thanks/', views.thanks_page, name='thanks_page'),
+    path('third/', views.third_page),
+    path('fourth0/', views.fourth_page),
+    path('fourth1/', views.fourth_page1),
+    path('fourth2/', views.fourth_page2),
+    path('fourth3/', views.fourth_page3),
+    path('fifth/', views.fifth_page)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) - для медиа файлов, когда на DEBUG = False
